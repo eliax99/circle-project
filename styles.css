@@ -136,7 +136,12 @@ nav ul a.active {
 
 .card {
   flex: 1;
-  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card-text {
@@ -281,6 +286,61 @@ footer img {
 }
 .simplify p {
   margin-top: 50px;
+}
+
+/* CONTACTO */
+.contacto {
+  padding: 60px 200px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contacto h1 {
+  margin-bottom: 10px;
+}
+
+.contacto p {
+  font-size: 16px;
+  color: var(--gris-medio);
+  margin-bottom: 8px;
+}
+
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 20px;
+  background-color: #e5e8f0;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--gris-medio);
+  outline: none;
+}
+
+.contacto textarea {
+  height: 160px;
+  resize: none;
+}
+
+.campo-email-telefono {
+  display: flex;
+  gap: 30px;
+}
+
+.campo-email-telefono > div {
+  flex: 1;
+}
+
+.contacto button {
+  width: 100%;
+  padding: 28px;
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /*
@@ -460,5 +520,9 @@ footer img {
   .campo-email-telefono {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .contacto {
+    padding: 40px 80px;
   }
 }

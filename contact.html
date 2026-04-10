@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Circle - Contact</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="contact.js"></script>
   </head>
 
   <body>
@@ -27,28 +28,33 @@
     </nav>
 
     <section class="contacto">
-      <h1>Contact Us</h1>
-      <div class="campo-nombre">
-        <p>Full Name*</p>
-        <input type="text" placeholder="Enter your full name" />
-      </div>
-      <div class="campo-email-telefono">
-        <div>
-          <p>Email</p>
-          <input type="email" placeholder="Enter your email adress" />
-        </div>
-
-        <div>
-          <p>Phone</p>
-          <input type="tel" placeholder="Enter your phone number" />
-        </div>
-      </div>
-      <div class="campo-mensaje">
-        <p>Message</p>
-        <textarea placeholder="Write your message here...."></textarea>
-      </div>
-      <button>Submit</button>
-    </section>
+  <h1>Contact Us</h1>
+  <div class="campo-nombre">
+    <p>Full Name*</p>
+    <input type="text" id="name" placeholder="Enter your full name" onblur="validateName()" />
+    <span id="errorName" hidden style="color:red">Name is required.</span>
+  </div>
+  <div class="campo-email-telefono">
+    <div>
+      <p>Email</p>
+      <input type="email" id="email" placeholder="Enter your email address" onblur="validateEmail()" />
+      <span id="errorEmail" hidden style="color:red">Email is required.</span>
+      <span id="errorFormatEmail" hidden style="color:red">Invalid email format.</span>
+    </div>
+    <div>
+      <p>Phone</p>
+      <input type="tel" id="phone" placeholder="Enter your phone number" onblur="validatePhone()" />
+      <span id="errorPhone" hidden style="color:red">Phone is required.</span>
+    </div>
+  </div>
+  <div class="campo-mensaje">
+    <p>Message</p>
+    <textarea id="message" placeholder="Write your message here...." onblur="validateMessage()"></textarea>
+    <span id="errorMessageUser" hidden style="color:red">Message must be at least 6 characters.</span>
+  </div>
+  <button onclick="sendForm()">Submit</button>
+  <span id="errorSubmit" hidden style="color:red">Please complete all fields correctly.</span>
+</section>
 
     <footer>
       <div>
